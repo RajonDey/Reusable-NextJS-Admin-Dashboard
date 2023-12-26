@@ -1062,6 +1062,10 @@ body{
   --tw-border-opacity: 1;
   border-top-color: rgb(216 194 191 / var(--tw-border-opacity));
 }
+.bg-\[\#777777\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(119 119 119 / var(--tw-bg-opacity));
+}
 .bg-\[\#9B2C2D\]{
   --tw-bg-opacity: 1;
   background-color: rgb(155 44 45 / var(--tw-bg-opacity));
@@ -1134,9 +1138,6 @@ body{
 }
 .bg-opacity-20{
   --tw-bg-opacity: 0.2;
-}
-.bg-\[url\(\'\/main-bg\.png\'\)\]{
-  background-image: url('/main-bg.png');
 }
 .bg-cover{
   background-size: cover;

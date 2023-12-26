@@ -1,13 +1,13 @@
-import axios from 'axios';
+import axios from "axios";
 const userToken =
-  typeof window !== 'undefined' ? localStorage.getItem('userToken') : null;
+  typeof window !== "undefined" ? localStorage.getItem("userToken") : null;
 
-const api_url = 'https://racksubadminapi.managedcoder.com/api/v1';
+const api_url = process.env.NEXT_PUBLIC_API_URL;
 export const axiosSecure = axios.create({
   baseURL: api_url,
   headers: {
-    'Content-Type': 'application/json',
-    Accept: 'application/json',
+    "Content-Type": "application/json",
+    Accept: "application/json",
     Authorization: `Bearer ${userToken}`,
   },
 });
@@ -15,8 +15,8 @@ export const axiosSecure = axios.create({
 export const axiosOpen = axios.create({
   baseURL: api_url,
   headers: {
-    'Content-Type': 'application/json',
-    Accept: 'application/json',
+    "Content-Type": "application/json",
+    Accept: "application/json",
   },
 });
 
@@ -30,7 +30,7 @@ export const axiosNonSecureInstance = axios.create({
 axiosSecureInstance.interceptors.request.use(
   (config) => {
     const userToken = localStorage.userToken
-      ? localStorage.getItem('userToken')
+      ? localStorage.getItem("userToken")
       : null;
     config.headers.Authorization = `Bearer ${userToken}`;
     return config;

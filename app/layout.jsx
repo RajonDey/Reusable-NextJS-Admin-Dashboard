@@ -1,9 +1,9 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Racksub - the ultimate edge is you',
+  title: "Reusable - NextJS Admin Dashboard ",
   description:
-    'Funding freemium long tail hypotheses first mover advantage assets ownership',
+    "Add the required meta description here!",
 };
 
 export default function RootLayout({ children }) {

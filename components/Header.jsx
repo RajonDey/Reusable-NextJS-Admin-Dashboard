@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Icon from '@mdi/react';
-import { useEffect, useState } from 'react';
-import { mdiAccountOutline, mdiPower } from '@mdi/js';
-import { useRouter } from 'next/navigation';
+import Image from "next/image";
+import Icon from "@mdi/react";
+import { useEffect, useState } from "react";
+import { mdiAccountOutline, mdiPower } from "@mdi/js";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [username, setUsername] = useState('user name');
+  const [username, setUsername] = useState("user name");
   useEffect(() => {
-    const name = window.localStorage.getItem('fullName');
+    const name = window.localStorage.getItem("fullName");
     setUsername(name);
   }, []);
   const toggleDropdown = () => {
@@ -19,7 +19,7 @@ const Header = () => {
   };
   const logout = () => {
     window.localStorage.clear();
-    router.push('/login');
+    router.push("/login");
   };
   return (
     <header className="bg-[#F3EEF2] flex items-center justify-between px-20">
@@ -27,7 +27,7 @@ const Header = () => {
       <div>
         <Image
           priority={true}
-          src="/logo-black.png"
+          src="/logo.svg"
           alt="Your Logo"
           width={100}
           height={80}

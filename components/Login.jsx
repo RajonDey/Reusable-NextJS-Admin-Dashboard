@@ -1,7 +1,6 @@
 'use client';
 import React, { useState } from 'react';
 import Form from './custom/Form';
-import { redirect } from 'next/navigation';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -33,17 +32,10 @@ const Login = () => {
     },
   ];
 
-  const handleUserCheck = (role) => {
-    if (role === 'PROVIDER') {
-      redirect('/owner');
-    } else if (role === 'CONSUMER') {
-      redirect('/buyer');
-    }
-  };
   const handleFormSubmit = (formData) => {
     // Handle form submission logic here based on the form data
     console.log('Form submitted:', formData);
-
+    
     (async () => {
       try {
         const response = await axiosNonSecureInstance.post('auth/login', {
@@ -56,22 +48,11 @@ const Login = () => {
         localStorage.role = response?.data?.role;
         localStorage.fullName = response.data?.fullName;
 
-        //  Adding Protected Route
 
-        // setAuth({
-        //   role: userRole,
-        //   loggedIn: true,
-        // });
-
-        // check role and redirect users to proper pages
-        // handleUserCheck();
         if (response?.status == 200) {
           toast.success('admin login successful');
           setTimeout(() => {
-            // if (response.data.role !== 'CONSUMER') router.push('/buyer');
-            // else {
             router.push('/');
-            // }
           }, 1000);
         }
       } catch (err) {
