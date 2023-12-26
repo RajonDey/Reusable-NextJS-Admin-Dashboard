@@ -1,0 +1,138 @@
+[
+  {
+    "Variable": "dc_capacity_title",
+    "Question": "Capacity Title"
+  },
+  {
+    "Variable": "dc_capacity_owner",
+    "Question": "Who owns your Data Center?"
+  },
+  {
+    "Variable": "dc_capacity_provider",
+    "Question": "What entity operates your Data Center?"
+  },
+  {
+    "Variable": "dc_capacity_metro_city",
+    "Question": "Closest Metropolitan Area?"
+  },
+  {
+    "Variable": "dc_capacity_street_address",
+    "Question": "Capacity Street address?"
+  },
+  {
+    "Variable": "dc_capacity_address",
+    "Question": "Where is your Data Center?"
+  },
+  {
+    "Variable": "dc_capacity_storage",
+    "Question": "Does your Data Center offer on-site storage for customers?"
+  },
+  {
+    "Variable": "dc_capacity_office",
+    "Question": "Does your Data Center offer on-site office space for customers?"
+  },
+  {
+    "Variable": "dc_capacity_msa",
+    "Question": "Does your Data Center host a Master Services Agreement form?"
+  },
+  {
+    "Variable": "dc_capacity_msa_form",
+    "Question": "If you answered 'Yes' to the question above, please upload a Template MSA."
+  },
+  {
+    "Variable": "dc_capacity_rack_width",
+    "Question": "How wide (W in inches) are your typical Data Center racks?"
+  },
+  {
+    "Variable": "dc_capacity_rack_ru",
+    "Question": "How many RU (rack units) are your typical Data Center racks?"
+  },
+  {
+    "Variable": "dc_capacity_rack_lockable",
+    "Question": "Are your typical Data Center racks lockable?"
+  },
+  {
+    "Variable": "dc_capacity_rack_number",
+    "Question": "How many of your Data Center rack positions are available?"
+  },
+  {
+    "Variable": "dc_capacity_rack_maxkw",
+    "Question": "What is your Data Center maximum kW per rack?"
+  },
+  {
+    "Variable": "dc_capacity_rack_cords",
+    "Question": "Does your Data Center accommodate dual-corded racks?"
+  },
+  {
+    "Variable": "dc_capacity_cage",
+    "Question": "How many Caged Data Center areas are available?"
+  },
+  {
+    "Variable": "dc_capacity_cage_size",
+    "Question": "If your Data Center offers Cages, what size (W x D in feet) are your Cages, typically?"
+  },
+  {
+    "Variable": "dc_capacity_raf",
+    "Question": "Does your Data Center utilize RAF (raised access flooring) and if so, what is the height from deck/floor to top of finished floor (RAF, in inches)?"
+  },
+  {
+    "Variable": "dc_capacity_raf_distribution",
+    "Question": "If your Data Center utilizes RAF, are power or data routed beneath the Finished Floor (FF) in the plenum?"
+  },
+  {
+    "Variable": "dc_capacity_height_clear",
+    "Question": "What is the clear height to your Data Center lowest overhead obstruction, from top of finished floor (in inches)?"
+  },
+  {
+    "Variable": "dc_capacity_power_number",
+    "Question": "How much Data Center capacity is available (in kW)?"
+  },
+  {
+    "Variable": "dc_capacity_power_metering",
+    "Question": "Can this Data Center capacity be separately metered?"
+  },
+  {
+    "Variable": "dc_capacity_power_whips",
+    "Question": "Does your Data Center provide electrical cables ('whips') to connect racks to the electrical distribution?"
+  },
+  {
+    "Variable": "dc_capacity_power_voltage",
+    "Question": "At what voltage is your Data Center capacity delivered?"
+  },
+  {
+    "Variable": "dc_capacity_license_start",
+    "Question": "How soon is your Data Center Capacity available?"
+  },
+  {
+    "Variable": "dc_capacity_license_length",
+    "Question": "For how long is your Data Center capacity initially available (in years)?"
+  },
+  {
+    "Variable": "dc_capacity_services",
+    "Question": "Does your Data Center offer Managed Services?"
+  },
+  {
+    "Variable": "dc_capacity_connectivity",
+    "Question": "Do you offer end users connectivity to the data center? List and/or provide a publicly accessible URL link."
+  },
+  {
+    "Variable": "dc_capacity_connectivity_type",
+    "Question": "If you answered 'Yes' to the question above, please provide a publicly accessible URL link to the services"
+  },
+  {
+    "Variable": "dc_capacity_repeat",
+    "Question": "Do you have any more Capacities to record for this Data Center?"
+  },
+  {
+    "Variable": "dc_capacity_repeat_other",
+    "Question": "Do you have other opportunities to record for other sites you manage?"
+  },
+  {
+    "Variable": "dc_capacity_workorder",
+    "Question": "Does your Data Center host a Work Order form?"
+  },
+  {
+    "Variable": "dc_capacity_workorder_form",
+    "Question": "If you answered 'Yes' to the question above, please upload a Template Work Order."
+  }
+]
