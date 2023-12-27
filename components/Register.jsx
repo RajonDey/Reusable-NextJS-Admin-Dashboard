@@ -1,77 +1,89 @@
-'use client';
+"use client";
 
-import Form from '@/components/custom/Form';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { axiosSecureInstance } from '@/utils/axios';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { validatePassword } from '@/utils/service';
+import Form from "@/components/custom/Form";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { axiosSecureInstance, axiosLocal } from "@/utils/axios";
+import { useRouter, useSearchParams } from "next/navigation";
+import { validatePassword } from "@/utils/service";
 export default function Register() {
   const router = useRouter();
   const formFields = [
     {
-      label: 'Name',
-      name: 'name',
-      type: 'name',
-      id: 'name',
-      placeholder: 'Type your name',
+      label: "Name",
+      name: "name",
+      type: "name",
+      id: "name",
+      placeholder: "Type your name",
       required: true,
-      error: 'name is required',
+      error: "name is required",
     },
     {
-      label: 'Email',
-      name: 'email',
-      type: 'email',
-      id: 'email',
-      placeholder: 'Type email here',
+      label: "Email",
+      name: "email",
+      type: "email",
+      id: "email",
+      placeholder: "Type email here",
       required: true,
-      error: 'email is required',
+      error: "email is required",
     },
     {
-      label: 'Password',
-      name: 'password',
-      type: 'password',
-      id: 'password',
-      placeholder: 'Type password',
+      label: "Password",
+      name: "password",
+      type: "password",
+      id: "password",
+      placeholder: "Type password",
       required: true,
-      error: 'password is required',
+      error: "password is required",
     },
     {
-      label: 'Confirm Password',
-      name: 'confirm-password',
-      type: 'password',
-      id: 'confirmPassword',
-      placeholder: 'Type password',
+      label: "Confirm Password",
+      name: "confirm-password",
+      type: "password",
+      id: "confirmPassword",
+      placeholder: "Type password",
       required: true,
-      error: 'please re type password',
+      error: "please re type password",
     },
   ];
 
   const handleFormSubmit = (formData) => {
     // Handle form submission logic here based on the form data
-
     (async () => {
       try {
         if (formData.password !== formData.confirmPassword) {
-          toast.warning('password doesnt match');
+          toast.warning("password doesnt match");
         } else if (!validatePassword(formData.password)) {
           toast.warning(
-            'Password must be at least 8 characters long and contain at least 1 uppercase letter and 1 number'
+            "Password must be at least 8 characters long and contain at least 1 uppercase letter and 1 number"
           );
         } else {
-          const response = await axiosSecureInstance.post('auth/register', {
-            fullName: formData.name,
+          // Real Server Code
+          // const response = await axiosSecureInstance.post("auth/register", {
+          //   fullName: formData.name,
+          //   email: formData.email,
+          //   password: formData.password,
+          //   role: "ADMIN",
+          // });
+
+          // Save User Data
+          const newUser = {
+            id: Date.now(),
+            name: formData.name,
             email: formData.email,
             password: formData.password,
-            role: 'ADMIN',
-          });
+            role: "ADMIN",
+          };
+
+          // Save response locally
+          const response = await axiosLocal.post("/users", newUser);
 
           if (response?.status == 201) {
             toast.success(
-              'admin registered successful. Please check your email to activate your account'
+              "admin registered successful. Please check your email to activate your account"
             );
             setTimeout(() => {
-              router.push('/login');
+              router.push("/login");
             }, 2000);
           }
         }

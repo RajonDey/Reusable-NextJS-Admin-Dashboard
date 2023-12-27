@@ -4,7 +4,7 @@ import Form from './custom/Form';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { axiosNonSecureInstance } from '@/utils/axios';
+import { axiosNonSecureInstance, axiosLocal } from "@/utils/axios";
 import { useRouter } from 'next/navigation';
 
 const Login = () => {
@@ -38,21 +38,23 @@ const Login = () => {
     
     (async () => {
       try {
-        const response = await axiosNonSecureInstance.post('auth/login', {
-          email: formData.email,
-          password: formData.password,
-        });
+        // Send a GET request to your local server to find a user with the given email
+        const response = await axiosLocal.get(`/users?email=${formData.email}&password=${formData.password}`);
+
+        // const response = await axiosNonSecureInstance.post("auth/login", {
+        //   email: formData.email,
+        //   password: formData.password,
+        // });
         console.log(response);
         localStorage.userID = response?.data?.userid;
         localStorage.userToken = response?.data?.token;
         localStorage.role = response?.data?.role;
         localStorage.fullName = response.data?.fullName;
 
-
         if (response?.status == 200) {
-          toast.success('admin login successful');
+          toast.success("admin login successful");
           setTimeout(() => {
-            router.push('/');
+            router.push("/");
           }, 1000);
         }
       } catch (err) {

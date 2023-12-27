@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "rajon",
+      "password": "12345678R"
+    },
+    {
+      "id": 2,
+      "username": "reshad",
+      "password": "12345678R"
+    },
+    {
+      "id": 1703689792473,
+      "name": "Rajon Dey",
+      "email": "rajon@gmail.com",
+      "password": "12345678R",
+      "role": "ADMIN"
+    }
+  ]
+}

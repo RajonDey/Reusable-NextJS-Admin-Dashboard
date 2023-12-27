@@ -12,6 +12,15 @@ export const axiosSecure = axios.create({
   },
 });
 
+// Create a new instance for your local server
+export const axiosLocal = axios.create({
+  baseURL: 'http://localhost:3001',
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+});
+
 export const axiosOpen = axios.create({
   baseURL: api_url,
   headers: {
