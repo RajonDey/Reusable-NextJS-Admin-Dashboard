@@ -9,13 +9,7 @@ export default function RootLayout({ children }) {
           {/* Top Section: Logo */}
           <Link href="/">
             <div className="flex items-center p-4 ">
-              <Image
-                priority={true}
-                src="/logo.svg"
-                alt="Your Logo"
-                width={100}
-                height={80}
-              />
+              <h2 className="text-[40px] font-bold">Logo</h2>
             </div>
           </Link>
           {children}

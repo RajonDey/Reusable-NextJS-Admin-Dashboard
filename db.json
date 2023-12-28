@@ -1,21 +1,20 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "rajon",
-      "password": "12345678R"
-    },
-    {
-      "id": 2,
-      "username": "reshad",
-      "password": "12345678R"
-    },
-    {
-      "id": 1703689792473,
-      "name": "Rajon Dey",
+      "_id": 1703689792473,
+      "fullName": "Rajon Dey",
       "email": "rajon@gmail.com",
       "password": "12345678R",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "userToken": "abcd"
+    },
+    {
+      "_id": 1703759145580,
+      "fullName": "Reshad",
+      "email": "reshad@gmail.com",
+      "password": "12345678R",
+      "role": "ADMIN",
+      "userToken": "abcd"
     }
   ]
 }

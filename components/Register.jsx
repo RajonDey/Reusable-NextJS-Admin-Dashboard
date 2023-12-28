@@ -68,16 +68,17 @@ export default function Register() {
 
           // Save User Data
           const newUser = {
-            id: Date.now(),
-            name: formData.name,
+            _id: Date.now(),
+            fullName: formData.name,
             email: formData.email,
             password: formData.password,
             role: "ADMIN",
+            userToken: "abcd",
           };
 
           // Save response locally
           const response = await axiosLocal.post("/users", newUser);
-
+          console.log(newUser);
           if (response?.status == 201) {
             toast.success(
               "admin registered successful. Please check your email to activate your account"

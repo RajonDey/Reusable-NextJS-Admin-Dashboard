@@ -21,7 +21,7 @@ export default function forgotPasswordPage() {
     //   navigate("/reset-password/c1-23");
     // }
     try {
-      const response = await axiosOpen.patch('auth/forgot-password', {
+      const response = await axiosOpen.patch('auth/forgot-password', { 
         email: formData.email,
       });
       console.log(response);

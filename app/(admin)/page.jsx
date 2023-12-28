@@ -8,27 +8,21 @@ import UsersListComponent from '@/components/data-tables/users/users-list-compon
 const page = async () => {
   return (
     <>
-      <Tabs defaultValue="newRequest" className="w-full gap-4 flex mt-5">
+      <Tabs defaultValue="user" className="w-full gap-4 flex mt-5">
         <TabsList className="grid grid-cols-max min-w-[300px] max-w-[300px]">
-          <TabsTrigger value="newRequest" className="sidebar-tab">
-            New Capacity Requests <span>1</span>
-          </TabsTrigger>
-          <TabsTrigger value="capacityList" className="sidebar-tab">
-            All Capacities <span>1</span>
-          </TabsTrigger>
           <TabsTrigger value="user" className="sidebar-tab">
             Users <span>1</span>
           </TabsTrigger>
+          <TabsTrigger value="services" className="sidebar-tab">
+            Services <span>1</span>
+          </TabsTrigger>
         </TabsList>
         {/* Tab content */}
-        <TabsContent className="w-full" value="newRequest">
-          <CapacityRequestComponent />
-        </TabsContent>
-        <TabsContent className="w-full" value="capacityList">
-          <CapacityListComponent />
-        </TabsContent>
         <TabsContent className="w-full" value="user">
           <UsersListComponent />
+        </TabsContent>
+        <TabsContent className="w-full" value="services">
+          <CapacityListComponent />
         </TabsContent>
       </Tabs>
       <ToastContainer

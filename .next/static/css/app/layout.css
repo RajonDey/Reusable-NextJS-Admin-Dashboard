@@ -1284,6 +1284,12 @@ body{
 .text-\[18px\]{
   font-size: 18px;
 }
+.text-\[40px\]{
+  font-size: 40px;
+}
+.text-\[60px\]{
+  font-size: 60px;
+}
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;

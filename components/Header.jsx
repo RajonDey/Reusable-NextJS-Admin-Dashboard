@@ -25,13 +25,7 @@ const Header = () => {
     <header className="bg-[#F3EEF2] flex items-center justify-between px-20">
       {/* Logo on the left */}
       <div>
-        <Image
-          priority={true}
-          src="/logo.svg"
-          alt="Your Logo"
-          width={100}
-          height={80}
-        />
+        <h2 className="text-[60px] font-bold">Logo</h2>
       </div>
 
       {/* User button with dropdown on the right */}
