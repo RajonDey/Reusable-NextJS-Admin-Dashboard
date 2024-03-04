@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 8021",
+    "dev": "next dev -p 3000",
     "build": "next build",
-    "start": "next start -p 8021", 
+    "start": "next start -p 3000",
     "lint": "next lint"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
+    "json-server": "^1.0.0-alpha.23",
     "lodash": "^4.17.21",
     "lucide-react": "^0.292.0",
     "moment": "^2.29.4",

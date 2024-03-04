@@ -24,7 +24,7 @@ const CustomPagination = ({ pagination, onPageChange }) => {
         ) {
             pageNumbers.push("...");
         }
-    }
+    } 
 
     return (
         <nav className="flex items-center gap-x-1 w-full justify-center my-10">

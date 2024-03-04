@@ -14,30 +14,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import CustomDialog from "@/components/custom/CustomDialog";
 import { toast } from "react-toastify";
 
-export function getUserMockData() {
-  // Fetch data from your API here.
-  return [
-    {
-      name: "User name",
-      userId: "1235870",
-      email: "test@gmail.com",
-      role: "Owner",
-    },
-    {
-      name: "User name",
-      userId: "1235870",
-      email: "test@gmail.com",
-      role: "Owner",
-    },
-    {
-      name: "User name",
-      userId: "1235870",
-      email: "test@gmail.com",
-      role: "Owner",
-    },
-  ];
-}
-
 const UsersListComponent = () => {
   const [userData, setUserData] = useState([]);
   const [isUserDataLoading, setIsUserDataLoading] = useState(true);
@@ -82,23 +58,27 @@ const UsersListComponent = () => {
   const getUserData = async (page, limit) => {
     try {
       setIsUserDataLoading(true);
-      // const result = await axiosSecureInstance.get(
-      //     ADMIN_GET_USERS_SLUG(page, limit)
+
+      // const result = await axiosSecureInstance.delete(
+      //   ADMIN_USER_SLUG(userId)
       // );
 
-      // local data
+      // Fetch your data here - however that needs to happen in your actual scenario
       const result = await axiosLocal.get("/users");
-      setUserData(result.data);
+      const totalItems = result.data.length; // Assume total number of items here
+      const totalPages = Math.ceil(totalItems / limit);
+      const startIndex = (page - 1) * limit;
+      const endIndex = startIndex + limit;
 
-      // if (result.data.success) {
-      //   setUserData(result.data.users);
-      //   setPaginationData(result?.data?.pagination);
-      // }
+      // This is mock pagination logic...
+      setUserData(result.data.slice(startIndex, endIndex));
+      setPaginationData({
+        currentPage: page,
+        totalPages: totalPages,
+        pageLimit: limit,
+      });
     } catch (error) {
-      console.log(
-        "🚀 ~ file: users-list-component.jsx:71 ~ getUserData ~ error:",
-        error
-      );
+      console.error("Error fetching data:", error);
     } finally {
       setIsUserDataLoading(false);
     }
@@ -116,6 +96,7 @@ const UsersListComponent = () => {
       const result = await axiosSecureInstance.get(
         ADMIN_GET_SEARCH_QUERY_USERS_SLUG(fullName, email)
       );
+      console.log(ADMIN_GET_SEARCH_QUERY_USERS_SLUG);
 
       if (result.data.success) {
         setUserData(result.data.users);

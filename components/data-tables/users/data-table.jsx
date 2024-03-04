@@ -40,100 +40,86 @@ export function UserDataTable({
     });
 
     return (
-        <>
-            <div className="rounded-md">
-                <Table>
-                    <TableHeader>
-                        {table.getHeaderGroups().map((headerGroup) => (
-                            <TableRow key={headerGroup.id}>
-                                {headerGroup.headers.map((header) => {
-                                    let className = "";
-                                    if (
-                                        header.column.columnDef.accessorKey ===
-                                        "featured"
-                                    ) {
-                                        className = "w-[80px]";
-                                    } else if (
-                                        header.column.columnDef.accessorKey ===
-                                        "status"
-                                    ) {
-                                        className = "w-[150px]";
-                                    } else if (
-                                        header.column.columnDef.accessorKey ===
-                                        "action"
-                                    ) {
-                                        className = "w-[100px]";
-                                    }
-                                    return (
-                                        <TableHead
-                                            key={header.id}
-                                            className={className}
-                                        >
-                                            {header.isPlaceholder
-                                                ? null
-                                                : flexRender(
-                                                      header.column.columnDef
-                                                          .header,
-                                                      header.getContext()
-                                                  )}
-                                        </TableHead>
-                                    );
-                                })}
-                            </TableRow>
-                        ))}
-                    </TableHeader>
-                    <TableBody>
-                        {table.getRowModel().rows?.length ? (
-                            table.getRowModel().rows.map((row) => (
-                                <TableRow
-                                    key={row.getValue('_id')}
-                                    data-state={
-                                        row.getIsSelected() && "selected"
-                                    }
-                                >
-                                    {row.getVisibleCells().map((cell) => (
-                                        <ClientSideRoute
-                                            route={
-                                                cell.column.id !== "action"
-                                                    ? `details/${row.id}`
-                                                    : ""
-                                            }
-                                        >
-                                            <TableCell key={cell.id}>
-                                            {flexRender(
-                                                  cell.column.columnDef.cell,
-                                                  {
-                                                      ...cell.getContext(),
-                                                      onActionClick,
-                                                      onDeleteUser
-                                                  }
-                                              )}
-                                            </TableCell>
-                                        </ClientSideRoute>
-                                    ))}
-                                </TableRow>
-                                //{' '}
-                            ))
-                        ) : (
-                            <TableRow>
-                                <TableCell
-                                    colSpan={columns.length}
-                                    className="h-24 text-center"
-                                >
-                                    {loading ? <Loading /> : "No Results."}
-                                </TableCell>
-                            </TableRow>
-                        )}
-                    </TableBody>
-                </Table>
-            </div>
-            <div className="flex items-center justify-end space-x-2 py-4">
-                {/* <DataTablePagination table={table} /> */}
-                <CustomPagination
-                    pagination={pagination}
-                    onPageChange={onPageChange}
-                />
-            </div>
-        </>
+      <>
+        <div className="rounded-md">
+          <Table>
+            <TableHeader>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => {
+                    let className = "";
+                    if (header.column.columnDef.accessorKey === "featured") {
+                      className = "w-[80px]";
+                    } else if (
+                      header.column.columnDef.accessorKey === "status"
+                    ) {
+                      className = "w-[150px]";
+                    } else if (
+                      header.column.columnDef.accessorKey === "action"
+                    ) {
+                      className = "w-[100px]";
+                    }
+                    return (
+                      <TableHead key={header.id} className={className}>
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                      </TableHead>
+                    );
+                  })}
+                </TableRow>
+              ))}
+            </TableHeader>
+            <TableBody>
+              {table.getRowModel().rows?.length ? (
+                table.getRowModel().rows.map((row) => (
+                  <TableRow
+                    key={row.original.id}
+                    data-state={row.getIsSelected() && "selected"}
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <ClientSideRoute
+                        route={
+                          cell.column.id !== "action"
+                            ? `details/${row.original.id}`
+                            : ""
+                        }
+                      >
+                        <TableCell key={cell.id}>
+                          {flexRender(cell.column.columnDef.cell, {
+                            ...cell.getContext(),
+                            onActionClick,
+                            onDeleteUser,
+                          })}
+                        </TableCell>
+                      </ClientSideRoute>
+                    ))}
+                  </TableRow>
+                  //{' '}
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell
+                    colSpan={columns.length}
+                    className="h-24 text-center"
+                  >
+                    {loading ? <Loading /> : "No Results."}
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </div>
+        <div className="flex items-center justify-end space-x-2 py-4">
+          {/* <DataTablePagination table={table} /> */}
+          <CustomPagination
+            pagination={pagination}
+            onPageChange={onPageChange}
+          />
+        </div>
+      </>
     );
 }
