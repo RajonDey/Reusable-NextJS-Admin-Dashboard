@@ -13,6 +13,7 @@ import { axiosSecureInstance, axiosLocal } from "@/utils/axios";
 import { Skeleton } from "@/components/ui/skeleton";
 import CustomDialog from "@/components/custom/CustomDialog";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 const UsersListComponent = () => {
   const [userData, setUserData] = useState([]);
@@ -96,11 +97,13 @@ const UsersListComponent = () => {
       const result = await axiosSecureInstance.get(
         ADMIN_GET_SEARCH_QUERY_USERS_SLUG(fullName, email)
       );
-      console.log(ADMIN_GET_SEARCH_QUERY_USERS_SLUG);
+      console.log("🚀 ~ getSearchQueryUsersData ~ result:", result);
+      console.log(ADMIN_GET_SEARCH_QUERY_USERS_SLUG(fullName, email));
 
-      if (result.data.success) {
-        setUserData(result.data.users);
+      if (result.data) {
+        setUserData(result.data);
         setPaginationData(result?.data?.pagination);
+        console.log(setUserData);
       }
     } catch (error) {
       console.log(
@@ -150,6 +153,7 @@ const UsersListComponent = () => {
     }
   };
 
+
   const columnsMemo = useMemo(
     () =>
       isUserDataLoading || isMakingAPIRequest
@@ -169,8 +173,13 @@ const UsersListComponent = () => {
         onChange={handleSearchQueryChange}
         placeholder="Search users"
       />
-      <div className="pt-5">
+      <div className="pt-5 flex justify-between">
         <h3 className="headline-small">Users</h3>
+        <div>
+          <Link href="/add-user" passHref>
+            <button className="main-btn">Add User</button>
+          </Link>
+        </div>
       </div>
       <div className="mt-5">
         <UserDataTable

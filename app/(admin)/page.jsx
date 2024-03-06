@@ -1,9 +1,7 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, toast } from 'react-toastify';
-import CapacityRequestComponent from '@/components/data-tables/capacity-requests/capacity-request-component';
-import CapacityListComponent from '@/components/data-tables/capacity-list/capacity-list-component';
-import UsersListComponent from '@/components/data-tables/users/users-list-component';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import UsersListComponent from "@/components/data-tables/users/users-list-component";
 
 const page = async () => {
   return (
@@ -13,18 +11,19 @@ const page = async () => {
           <TabsTrigger value="user" className="sidebar-tab">
             Users <span>1</span>
           </TabsTrigger>
-          <TabsTrigger value="services" className="sidebar-tab">
+          {/* <TabsTrigger value="services" className="sidebar-tab">
             Services <span>1</span>
-          </TabsTrigger>
+          </TabsTrigger> */}
         </TabsList>
         {/* Tab content */}
         <TabsContent className="w-full" value="user">
           <UsersListComponent />
         </TabsContent>
-        <TabsContent className="w-full" value="services">
+        {/* <TabsContent className="w-full" value="services">
           <CapacityListComponent />
-        </TabsContent>
+        </TabsContent> */}
       </Tabs>
+
       <ToastContainer
         position="top-right"
         autoClose={5000}

@@ -1,5 +1,3 @@
-
-
 {
   "users": [
     {
@@ -35,14 +33,28 @@
       "userToken": "abcd"
     },
     {
-      "id": 1703759145583,
-      "fullName": "Reshad 3",
-      "email": "reshad3@gmail.com",
+      "fullName": "Rajon9",
+      "email": "rajon9@gmail.com",
       "password": "12345678R",
       "role": "ADMIN",
-      "userToken": "abcd"
+      "userToken": "",
+      "id": 1709731995517
+    },
+    {
+      "fullName": "Rajon10",
+      "email": "rajon10@gmail.com",
+      "password": "12345678R",
+      "role": "USER",
+      "userToken": "",
+      "id": 1709733425234
+    },
+    {
+      "fullName": "Rajon99",
+      "email": "rajon99@gmail.com",
+      "password": "12345678R",
+      "role": "ADMIN",
+      "userToken": "",
+      "id": 1709734223804
     }
   ]
 }
-
-

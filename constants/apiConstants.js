@@ -14,9 +14,8 @@ export const DETAILS_SLUG = (id) => `/admin/capacity/${id}`;
 export const ADMIN_GET_USERS_SLUG = (page, limit) =>
   `/admin/users/?limit=${limit}&page=${page}`;
 export const ADMIN_GET_SEARCH_QUERY_USERS_SLUG = (fullName, email) =>
-  `/users/?${fullName ? `fullName=${fullName}` : ""}${
-    email ? `email=${email}` : ""
+  `/users/?${fullName ? "fullName=" + fullName : ""}${
+    email ? "email=" + email : ""
   }`;
 export const ADMIN_DELETE_USER_SLUG = (id) => `/admin/users/${id}`;
 export const ADMIN_DETAILS_SLUG = (id) => `http://localhost:3001/users/${id}`;
-

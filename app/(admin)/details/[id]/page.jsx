@@ -1,17 +1,17 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import { Label } from '@radix-ui/react-label';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { axiosSecureInstance } from '@/utils/axios';
-import Loading from '@/components/custom/Loading';
-import dataset from '@/constants/capacity_details_questions';
+"use client";
+import React, { useEffect, useState } from "react";
+import { Label } from "@radix-ui/react-label";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { axiosSecureInstance } from "@/utils/axios";
+import Loading from "@/components/custom/Loading";
+import dataset from "@/constants/capacity_details_questions";
 import { ADMIN_DETAILS_SLUG } from "@/constants/apiConstants";
 
 const page = ({ params: { id } }) => {
   const [details, setDetails] = useState();
   const [loading, setLoading] = useState(true);
-  
+
   const getDetails = async () => {
     try {
       // Assuming the `id` passed corresponds to a user._id in your db.json
@@ -41,12 +41,19 @@ const page = ({ params: { id } }) => {
           <Loading />
         ) : (
           details && (
-            <div className="border-input-details mb-[16px]">
+            <div className="bg-slate-100 rounded-xl p-8 dark:bg-slate-800 w-9/12 mx-auto">
               <Label className="label-large">Full Name</Label>
               <p className="body-medium">{details.fullName}</p>
 
-              <Label className="label-large">Email</Label>
+              <Label className="label-large block pt-5">Email</Label>
               <p className="body-medium">{details.email}</p>
+
+              <Label className="label-large block pt-5">User Id</Label>
+              <p className="body-medium">{details.id}</p>
+
+              <Label className="label-large block pt-5">
+                His Role: {details.role}
+              </Label>
 
               {/* Render other user details similarly */}
             </div>

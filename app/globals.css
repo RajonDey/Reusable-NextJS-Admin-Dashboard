@@ -107,7 +107,7 @@ body {
     @apply bg-[#EF4D48];
   }
   .transparent-btn {
-    @apply text-[#410003] bg-transparent hover:bg-[#E8E3F1] border border-[#410003] hover:text-[#fff] hover:-translate-y-0.5 transition ease-in-out;
+    @apply text-[#410003] bg-transparent hover:bg-[#B62325] border border-[#410003] hover:text-[#fff] hover:-translate-y-0.5 transition ease-in-out;
   }
   .status-btn {
     @apply rounded-full text-sm text-white font-medium bg-green-100;
