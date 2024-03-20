@@ -23,8 +23,8 @@ npm install
 3. Run Development Server:
 -- Frontend:
 npm run dev
-This will start the Next.js development server, typically accessible at http://localhost:3000 by default.
 
+This will start the Next.js development server, typically accessible at http://localhost:3000 by default.
 -- Mock Server (for development only):
 json-server --watch db.json --port 3001
 In a separate terminal window, run the json-server to simulate API calls:
