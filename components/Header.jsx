@@ -44,7 +44,7 @@ const Header = () => {
               <li className="py-2 border-t-[#D8C2BF]">
                 <div
                   onClick={logout}
-                  className="px-3 py-2 flex gap-2 hover:bg-[#aaaaaa]"
+                  className="px-3 py-2 flex gap-2 hover:bg-[#aaaaaa] cursor-pointer"
                 >
                   <Icon path={mdiPower} size={1} />
                   Logout

@@ -56,5 +56,31 @@
       "userToken": "",
       "id": 1709734223804
     }
+  ],
+  "content": [
+    {
+      "id": 1,
+      "title": "Sample Content 1",
+      "description": "This is some sample content that needs approval.",
+      "status": "approved"
+    },
+    {
+      "id": 2,
+      "title": "Another Sample Content",
+      "description": "Another piece of content waiting for review.",
+      "status": "pending"
+    },
+    {
+      "id": 3,
+      "title": "Sample Content 1",
+      "description": "This is some sample content that needs approval.",
+      "status": "approved"
+    },
+    {
+      "id": 4,
+      "title": "Sample Content 1",
+      "description": "This is some sample content that needs approval.",
+      "status": "pending"
+    }
   ]
 }
