@@ -13,22 +13,31 @@ This project is a reusable NextJs template for an Admin Dashboard, primarily des
 - Other dependencies listed in package.json
 
 ## Getting Started
-1. Clone the Repository:
-git clone https://github.com/RajonDey/Reusable-NextJS-Admin-Dashboard.git
+1. **Clone the Repository:**
+   ```sh
+   git clone https://github.com/RajonDey/Reusable-NextJS-Admin-Dashboard.git
+	
 
-2. Install Dependencies:
+2. **Install Dependencies:**
+```sh
 cd your-project-name
 npm install
+```
 
-3. Run Development Server:
--- Frontend:
-npm run dev
 
-This will start the Next.js development server, typically accessible at http://localhost:3000 by default.
--- Mock Server (for development only):
-json-server --watch db.json --port 3001
-In a separate terminal window, run the json-server to simulate API calls:
-This creates a mock server that serves data from the db.json file (adjust the port if necessary).
+3. **Run Development Server:**
+   - **Frontend:**
+     ```sh
+     npm run dev
+     ```
+     This will start the Next.js development server, typically accessible at [http://localhost:3000](http://localhost:3000) by default.
+
+   - **Mock Server (for development only):**
+     ```sh
+     json-server --watch db.json --port 3001
+     ```
+     In a separate terminal window, run the json-server to simulate API calls:
+     This creates a mock server that serves data from the db.json file (adjust the port if necessary).
 
 ## Contribution
 
