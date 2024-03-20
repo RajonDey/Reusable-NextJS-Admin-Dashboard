@@ -1,39 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Admin Dashboard Template
+This project is a reusable NextJs template for an Admin Dashboard, primarily designed for user management. It provides features like User Authentication, User Management, User Search Option, User Table with Pagination, and Content/Service Management.
+
+## Key Features
+- User Management
+- Content/Service Management
+
+## Technologies Used
+- Next.js (Frontend)
+- Tailwind CSS
+- Shadcn UI
+- json-server (development only)
+- Other dependencies listed in package.json
 
 ## Getting Started
+1. Clone the Repository:
+git clone https://github.com/RajonDey/Reusable-NextJS-Admin-Dashboard.git
 
-First, run the development server:
+2. Install Dependencies:
+cd your-project-name
+npm install
 
-```bash
+3. Run Development Server:
+-- Frontend:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This will start the Next.js development server, typically accessible at http://localhost:3000 by default.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-Use this for running server:
+-- Mock Server (for development only):
 json-server --watch db.json --port 3001
+In a separate terminal window, run the json-server to simulate API calls:
+This creates a mock server that serves data from the db.json file (adjust the port if necessary).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Contribution
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+We welcome contributions to this project! Please follow general coding conventions and create pull requests for your changes.

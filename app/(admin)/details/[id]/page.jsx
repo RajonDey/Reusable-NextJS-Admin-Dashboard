@@ -35,13 +35,13 @@ const page = ({ params: { id } }) => {
 
   return (
     <div className="mt-[40px] mb-[40px]">
-      <div className=" flex flex-col justify-between h-[calc(100vh-160px)]">
-        <h2 className="headline-small mb-[8px]"> User Details </h2>
+      <div className=" flex flex-col justify-center items-center h-[calc(100vh-160px)]">
+        <h2 className="headline-small mb-[50px]"> User Details </h2>
         {loading ? (
           <Loading />
         ) : (
           details && (
-            <div className="bg-slate-100 rounded-xl p-8 dark:bg-slate-800 w-9/12 mx-auto">
+            <div className="bg-slate-100 rounded-xl p-8 dark:bg-slate-800 w-9/12 mx-auto relative">
               <Label className="label-large">Full Name</Label>
               <p className="body-medium">{details.fullName}</p>
 
@@ -56,15 +56,14 @@ const page = ({ params: { id } }) => {
               </Label>
 
               {/* Render other user details similarly */}
+              <div className="flex justify-end gap-3 absolute bottom-[-50px] right-0">
+                <Link href="/">
+                  <Button className="transparent-btn">Go back</Button>
+                </Link>
+              </div>
             </div>
           )
         )}
-
-        <div className="flex justify-end gap-3 mt-[60px] ">
-          <Link href="/">
-            <Button className="transparent-btn">Go back</Button>
-          </Link>
-        </div>
       </div>
     </div>
   );
