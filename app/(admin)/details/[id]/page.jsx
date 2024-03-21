@@ -8,8 +8,17 @@ import Loading from "@/components/custom/Loading";
 import dataset from "@/constants/capacity_details_questions";
 import { ADMIN_DETAILS_SLUG } from "@/constants/apiConstants";
 import EditUserForm from "@/components/EditUserForm";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const page = ({ params: { id } }) => {
   const [details, setDetails] = useState();
@@ -66,9 +75,23 @@ const page = ({ params: { id } }) => {
                   </Link>
                 </div>
                 <div className="flex justify-end gap-3 absolute top-[10px] right-[10px]">
-                  <Link href="/edit-user">
-                    <Button className="transparent-btn">Eidt User</Button>
-                  </Link>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline">Eidt User</Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[600px]">
+                      <DialogHeader>
+                        <DialogTitle>Edit User</DialogTitle>
+                        <DialogDescription>
+                          Make changes to your users data here. Click save when
+                          you're done.
+                        </DialogDescription>
+                      </DialogHeader>
+                      <div className="grid gap-4 py-4">
+                        <EditUserForm userId={id} />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </div>
             </>
