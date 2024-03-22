@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { axiosSecureInstance } from "@/utils/axios";
 import Loading from "@/components/custom/Loading";
-import dataset from "@/constants/capacity_details_questions";
 import { ADMIN_DETAILS_SLUG } from "@/constants/apiConstants";
 import EditUserForm from "@/components/EditUserForm";
 import { ToastContainer } from "react-toastify";

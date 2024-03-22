@@ -5,7 +5,7 @@
       "fullName": "Rajon dey",
       "email": "rajon@gmail.com",
       "password": "12345678R",
-      "role": "USER",
+      "role": "ADMIN",
       "userToken": "abcd"
     },
     {
@@ -55,6 +55,14 @@
       "role": "ADMIN",
       "userToken": "",
       "id": 1709734223804
+    },
+    {
+      "fullName": "RD",
+      "email": "rd@gmail.com",
+      "password": "123User@",
+      "role": "ADMIN",
+      "userToken": "",
+      "id": 1711121291763
     }
   ],
   "content": [
