@@ -621,9 +621,6 @@ body{
 .z-50{
   z-index: 50;
 }
-.col-span-3{
-  grid-column: span 3 / span 3;
-}
 .m-0{
   margin: 0px;
 }
@@ -875,6 +872,9 @@ body{
 .min-w-\[38px\]{
   min-width: 38px;
 }
+.min-w-\[500px\]{
+  min-width: 500px;
+}
 .min-w-\[8rem\]{
   min-width: 8rem;
 }
@@ -950,9 +950,6 @@ body{
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-}
-.grid-cols-4{
-  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .flex-col{
   flex-direction: column;
@@ -1342,9 +1339,6 @@ body{
 }
 .text-center{
   text-align: center;
-}
-.text-right{
-  text-align: right;
 }
 .align-middle{
   vertical-align: middle;
@@ -2101,18 +2095,6 @@ body {
 
   .sm\:max-w-\[560px\]{
     max-width: 560px;
-  }
-
-  .sm\:max-w-\[425px\]{
-    max-width: 425px;
-  }
-
-  .sm\:max-w-\[75px\]{
-    max-width: 75px;
-  }
-
-  .sm\:max-w-\[755px\]{
-    max-width: 755px;
   }
 
   .sm\:max-w-\[600px\]{

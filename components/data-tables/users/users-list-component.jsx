@@ -153,7 +153,6 @@ const UsersListComponent = () => {
     }
   };
 
-
   const columnsMemo = useMemo(
     () =>
       isUserDataLoading || isMakingAPIRequest
@@ -171,7 +170,7 @@ const UsersListComponent = () => {
     <>
       <SearchField
         onChange={handleSearchQueryChange}
-        placeholder="Search users"
+        placeholder="Search users by full name..."
       />
       <div className="pt-5 flex justify-between">
         <h3 className="headline-small">Users</h3>

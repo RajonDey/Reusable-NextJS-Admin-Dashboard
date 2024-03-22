@@ -5,7 +5,7 @@ import { axiosLocal } from "@/utils/axios";
 import { toast } from "react-toastify";
 import Link from "next/link";
 
-const EditUserForm = ({ userId }) => {
+const EditUserForm = ({ userId, onUserUpdate }) => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -48,6 +48,7 @@ const EditUserForm = ({ userId }) => {
       const response = await axiosLocal.put(`/users/${userId}`, formData);
       if (response.status === 200) {
         toast.success("User successfully updated."); // Ensure this line is inside the try block
+        setTimeout(onUserUpdate, 2000);
       } else {
         toast.error("Something went wrong.");
       }
@@ -60,7 +61,7 @@ const EditUserForm = ({ userId }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col bg-gray-100 p-8 rounded shadow-lg max-w-lg mx-auto my-0 space-y-4 mt-5 relative"
+      className="flex flex-col bg-gray-100 p-8 rounded shadow-lg mx-auto my-0 space-y-4 mt-5 relative min-w-[500px]"
       style={{
         justifyContent: "center",
         alignItems: "center",

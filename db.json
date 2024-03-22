@@ -2,8 +2,8 @@
   "users": [
     {
       "id": 1703689792473,
-      "fullName": "Rajon Dey 2.0",
-      "email": "rajon2@gmail.com",
+      "fullName": "Rajon dey",
+      "email": "rajon@gmail.com",
       "password": "12345678R",
       "role": "USER",
       "userToken": "abcd"
@@ -18,7 +18,7 @@
     },
     {
       "id": 1703689792403,
-      "fullName": "Rajon Dey",
+      "fullName": "Rajon dey",
       "email": "rajon@gmail.com",
       "password": "12345678R",
       "role": "ADMIN",
